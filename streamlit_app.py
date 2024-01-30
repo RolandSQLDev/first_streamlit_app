@@ -46,6 +46,7 @@ streamlit.dataframe(my_data_rows)
 # Allow the end user to add a fruit to the list
 streamlit.text("What fruit would you like information about?")
 add_my_fruit = "jackfruit"
-streamlit.write('Thanks for adding ', add_my_fruit)
+streamlit.write("Thanks for adding: ", add_my_fruit)
+
 # This will not work correctly, but just go with it for now
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
