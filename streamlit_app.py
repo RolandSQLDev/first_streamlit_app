@@ -38,7 +38,9 @@ try:
 except URLError as e:
    streamlit.error()
 
-streamlit.text(fruityvice_response.json()) # just writes the data to the screen
+# just writes the data to the screen
+streamlit.text(fruityvice_response.json())
+
 # don't run anything past here while we trouble shoot 
 snowflake.stop()
 
