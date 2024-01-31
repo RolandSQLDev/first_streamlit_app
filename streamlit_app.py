@@ -1,6 +1,5 @@
 import streamlit
 import pandas
-#import requests
 import snowflake.connector
 from urllib.error import URLError
 
@@ -23,11 +22,12 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
- 
+
+
 # New Section to display fruityvice api response
 streamlit.header("Fruityvice Fruit Advice!")
 try:
-   fruit_choice = streamlit.text_imput('What fruit would you like information about?')
+   fruit_choice = streamlit.text_imput("What fruit would you like information about?")
    if not fruit_choice:
       streamlit.error("Please select a fruit to get information.")
    else:
@@ -39,10 +39,6 @@ except URLError as e:
    streamlit.error()
 
 streamlit.text(fruityvice_response.json()) # just writes the data to the screen
-# take the json version of the response and normalize it
-
-#output it the screen as a table
-
 # don't run anything past here while we trouble shoot 
 snowflake.stop()
 
