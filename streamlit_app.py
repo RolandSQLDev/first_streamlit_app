@@ -1,6 +1,6 @@
 import streamlit
 import pandas
-import requests
+#import requests
 import snowflake.connector
 from urllib.error import URLError
 
@@ -40,7 +40,7 @@ except URLError as e:
    streamlit.error()
 
 # just writes the data to the screen
-# streamlit.text(fruityvice_response.json())
+streamlit.text(fruityvice_response.json())
 
 # don't run anything past here while we trouble shoot 
 snowflake.stop()
